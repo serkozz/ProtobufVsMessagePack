@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+package ProtobufVsMessagePack.ProtobufModel;
+
+service EmployeeService {
+  rpc GetEmployee (EmployeeRequest) returns (EmployeeResponse);
+}
+
+message EmployeeRequest {
+  string employee_id = 1;
+}
+
+message EmployeeResponse {
+  Employee employee = 1;
+}
+
+// Enum for employment status
+enum Status {
+  ACTIVE = 0;
+  INACTIVE = 1;
+  PENDING = 2;
+}
+
+// Message for city information
+message City {
+  string name = 1;
+  string state = 2;
+  string country = 3;
+  int32 population = 4;
+}
+
+// Message for skill information
+message Skill {
+  string name = 1;
+  int32 proficiency_level = 2;
+  string description = 3;
+}
+
+// Message for contact information
+message ContactInfo {
+  string email = 1;
+  string phone_number = 2;
+}
+
+// Message for address information
+message Address {
+  string street = 1;
+  City city = 2;
+  string postal_code = 3;
+}
+
+// Message for employee information
+message Employee {
+  string name = 1;
+  int32 age = 2;
+  Status employment_status = 3;
+  Address home_address = 4;
+  ContactInfo contact = 5;
+  repeated Skill skills = 6;
+  City city = 7;
+}
