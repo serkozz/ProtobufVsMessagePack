@@ -8,7 +8,9 @@ Unknown processor
 
 
 ```
-| Method                      | Mean       | Error   | StdDev  | Gen0   | Allocated |
-|---------------------------- |-----------:|--------:|--------:|-------:|----------:|
-| SerializeUsingMessagePack   |   717.3 ns | 1.07 ns | 0.95 ns | 0.2594 |     544 B |
-| DeserializeUsingMessagePack | 1,783.1 ns | 3.15 ns | 2.79 ns | 0.7572 |    1584 B |
+| Method                                  | Mean                | Error            | StdDev           | Gen0         | Gen1        | Gen2       | Allocated     |
+|---------------------------------------- |--------------------:|-----------------:|-----------------:|-------------:|------------:|-----------:|--------------:|
+| SerializeUsingMessagePack               |            694.4 ns |          2.10 ns |          1.96 ns |       0.2594 |           - |          - |         544 B |
+| DeserializeUsingMessagePack             |          1,727.8 ns |          2.84 ns |          2.52 ns |       0.7572 |           - |          - |        1584 B |
+| SerializeMillionArrayUsingMessagePack   | 25,944,435,983.3 ns | 50,395,506.13 ns | 39,345,496.32 ns | 3298000.0000 | 762000.0000 | 10000.0000 | 18976329896 B |
+| DeserializeMillionArrayUsingMessagePack | 27,998,072,000.0 ns | 76,356,273.75 ns | 63,760,946.79 ns | 4059000.0000 | 803000.0000 | 10000.0000 | 20900244600 B |
